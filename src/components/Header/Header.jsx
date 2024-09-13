@@ -39,7 +39,7 @@ function Header() {
             <div className={styles['logo-container']}>
           <h1 className={styles['nav-branding']}>
             <img src={logo} alt="logo" className={styles.logo} />
-            <Link to="/">Gov's outdoors</Link>
+            <Link to="/">Gov's Testing</Link>
           </h1>
           </div>
           <ul className={styles['nav-menu']}>
