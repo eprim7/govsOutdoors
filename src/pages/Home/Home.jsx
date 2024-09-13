@@ -1,14 +1,16 @@
-import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
 import homePicture from '../../assets/homePicture.png';
+import Header from "../../components/Header/Header";
 
 function Home(){
     return(
         <>
-        <h1 className={styles.h1}>Gov's Outdoors Home Page</h1>
-        <p><Link to="about">About</Link></p>
-        <img style={{ height: '70%', width: '100%' }} src={homePicture} alt="home page pic" />
-        </>
+        <Header />
+        <div className={styles.container}>
+            <img className={styles.img} src={homePicture} alt="home page pic" />
+        </div>  
+        
+         </>
     );
 }
 

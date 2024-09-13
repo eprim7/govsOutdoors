@@ -4,15 +4,15 @@
 #   This solves the problem of Gov's Outdoors not having their own website
 #
 #   Frontend
-#   The frontend was created using the React Framework
+      The frontend was created using the React Framework
 #   
 #
 #   Backend
-#   The backend was created using PHP
+      The backend was created using PHP
 #
 #
 #   Database
-#   The database was created using mySQL
+      The database was created using mySQL
 #
 ## Installation
 
