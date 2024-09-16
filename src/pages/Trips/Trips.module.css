@@ -1,0 +1,26 @@
+h1{
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 1%;
+}
+.fc-toolbar-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2C3E50;  /* Example color */
+  }
+  
+  .fc-prev-button,
+  .fc-next-button {
+    background-color: #3498db; /* Button color */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  
+  .fc-prev-button:hover,
+  .fc-next-button:hover {
+    background-color: #2980b9; /* Button hover color */
+  }

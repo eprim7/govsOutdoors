@@ -60,12 +60,12 @@ function Header() {
             </li>
             <li className={styles['nav-item']}>
               <p className={styles['nav-link']}>
-                <Link to="/">Trips</Link>
+                <Link to="/trips">Trips</Link>
               </p>
             </li>
             <li className={styles['nav-item']}>
               <p className={styles['nav-link']}>
-                <Link to="/">Profile</Link>
+                <Link to="/profile">Profile</Link>
               </p>
             </li>
           </ul>

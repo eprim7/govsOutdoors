@@ -79,6 +79,10 @@ a {
 @media (max-width: 768px) {
     .hamburger {
         display: block;
+        position: fixed; 
+        top: 20px; 
+        right: 20px;
+        z-index: 10000;
     }
 
     .hamburger.active .bar:nth-child(2) {
@@ -96,13 +100,16 @@ a {
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 70px;
-        gap: 0;
+        top: 0;
         flex-direction: column;
         background-color: red;
-        width: 100%;
+        width: 100vw;
+        height: 100vh;
         text-align: center;
         transition: 0.3s;
+        z-index: 9999;
+        justify-content: center;
+        align-items: center;
     }
 
     .nav-item {
