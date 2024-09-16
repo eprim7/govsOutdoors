@@ -6,7 +6,7 @@ function Profile() {
 
         <>
             <Header />
-            <h1>Testing gugksadfglagured it out </h1>
+            <h1>Profile</h1>
         </>
 
     );
