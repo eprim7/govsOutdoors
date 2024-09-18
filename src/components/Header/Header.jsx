@@ -48,11 +48,7 @@ function Header() {
                 <Link to="/">Home</Link>
               </p>
             </li>
-            <li className={styles['nav-item']}>
-              <p className={styles['nav-link']}>
-                <Link to="/about">About</Link>
-              </p>
-            </li>
+            
             <li className={styles['nav-item']}>
               <p className={styles['nav-link']}>
                 <Link to="/schedule">Schedule</Link>
@@ -61,6 +57,16 @@ function Header() {
             <li className={styles['nav-item']}>
               <p className={styles['nav-link']}>
                 <Link to="/trips">Trips</Link>
+              </p>
+            </li>
+            <li className={styles['nav-item']}>
+              <p className={styles['nav-link']}>
+                <Link to="/events">Events</Link>
+              </p>
+            </li>
+            <li className={styles['nav-item']}>
+              <p className={styles['nav-link']}>
+                <Link to="/about">About</Link>
               </p>
             </li>
             <li className={styles['nav-item']}>
