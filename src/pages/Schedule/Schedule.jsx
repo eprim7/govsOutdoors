@@ -2,11 +2,14 @@ import Header from "../../components/Header/Header";
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
+import styles from './Schedule.module.css';
 
 function Schedule() {
   return (
     <>
       <Header />
+      <h1 className={styles.h1}>Current 2024 Fall Schedule</h1>
+      <div className={styles.scheduleContainer}>
       <FullCalendar
         plugins={[dayGridPlugin, timeGridPlugin]}
         initialView="dayGridMonth"
@@ -28,7 +31,7 @@ function Schedule() {
           },
         ]}
       />
-      <h1>Schedule page</h1>
+      </div>
     </>
   );
 }

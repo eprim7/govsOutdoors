@@ -1,0 +1,20 @@
+.scheduleContainer{
+    height: 100vh;
+    width: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7%;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 35px;
+    box-sizing: border-box;
+    margin-bottom: 3%;
+}
+.container{
+    background-color: green;
+    margin: 0;
+}
+.h1{
+    text-align: center;
+    margin-top: 3%;
+}
