@@ -10,7 +10,7 @@
   display: flex;
   align-items: center;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increased blur and spread */
   padding: 20px;
   min-height: 200px;  /* Set a minimum height for the rows */
 }

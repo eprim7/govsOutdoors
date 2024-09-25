@@ -35,7 +35,7 @@ function About(){
             <h1 className={styles.h1}>Contact Us Here</h1>
                 <div className={styles.filler}>
                     <br />
-                    <h3 className={styles.h3}>Number: (931) 221-6976</h3>
+                    <h3 className={styles.h3}>Phone Number: (931) 221-6976</h3>
                     <br />
                     <h3 className={styles.h3}>Email: murchisonm@apsu.edu</h3>
                     <br />

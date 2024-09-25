@@ -9,7 +9,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background-color: #43A047;
+    background-color: #333333;
     width: 70%;
     height: 60vh;
     border-radius: 15px;
@@ -22,7 +22,7 @@
     margin-top: 5%;
 }
 .h2 {
-  color: #f4f4f4;
+  color: white;
   word-wrap: normal;
   line-height: 1.6;
 }
@@ -35,7 +35,7 @@
   margin: 6% 2%;
   height: 500px;
   width: 400px;
-  background-color: #388E3C;
+  background-color: #333333;
   opacity: 0.85;
 }
 .map:hover {
