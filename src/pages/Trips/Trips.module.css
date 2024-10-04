@@ -42,11 +42,18 @@
 }
 
 .learnmore{
-padding: 5px 5px; 
-text-align: left;
-background-color: red;
-color: white;
-border-radius: 15px;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #d32f2f;
+  color: white;
+  text-align: center;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+.learnmore:hover {
+  background-color: #b71c1c;
 }
 
 /* Responsive Design for Smaller Screens */

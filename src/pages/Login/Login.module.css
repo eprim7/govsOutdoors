@@ -1,0 +1,41 @@
+.h1{
+    text-align: center;
+    margin-top: 3%;
+}
+.container{
+    margin-left: 37%;
+    margin-top: 5%;
+    width: 500px;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding-bottom: 20px;
+}
+.input{
+    margin: 10%;
+    padding: 20px;
+    left: auto;
+    font-size: 20px;
+    border: 2px solid black;
+}
+.label{
+    padding-left: 10px;
+    font-size: 1em;
+}
+.h3{
+    text-align: center;
+    margin-top: 3%;
+}
+.button{
+    border-radius: 20px;
+    width: 150px;
+    margin-top: 3%;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    display: grid;
+    cursor: pointer;
+}
+.span{
+    color: red;
+    cursor: pointer;
+}

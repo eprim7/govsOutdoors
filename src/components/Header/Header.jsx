@@ -75,7 +75,7 @@ function Header() {
             </li>
             <li className={styles['nav-item']}>
               <p className={styles['nav-link']}>
-                <Link to="/profile">Profile</Link>
+                <Link to="/Login">Login</Link>
               </p>
             </li>
           </ul>

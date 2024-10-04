@@ -38,3 +38,22 @@
     background: rgba(0, 0, 0, 0.5);
     z-index: 999; 
 }
+
+@media (max-width: 768px) {
+    .scheduleContainer {
+        width: 80vw; /* Slightly narrower for small devices */
+        height: 70vh;
+        padding: 10px; /* Less padding for smaller screens */
+        margin-top: 2%;
+    }
+}
+
+.h1 {
+    text-align: center;
+    margin-top: 2%; /* Less margin for smaller devices */
+}
+
+.modal {
+    width: 80vw; /* Responsive modal width */
+    padding: 10px; /* Adjust padding */
+}

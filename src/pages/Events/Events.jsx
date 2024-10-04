@@ -16,7 +16,7 @@ function Events(){
         {/* row 1 */}
         <div className={styles.row}>
             <div className={styles.labelandexplanation}>
-                <div className={styles.label}>Label 1</div>
+                <div className={styles.label}>Jump Scare Dyno Competition</div>
                 <br></br>
                 <div className={styles.explanation}>This is the description for the first image. It provides more information about the content displayed in the image. this is for the 
                     events so blah and talk about climbing.  this event in particular is the jump scare dyno competition.  they shouldnt need a link to more info since you do not have 

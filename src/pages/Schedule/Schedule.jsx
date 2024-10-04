@@ -33,6 +33,7 @@ const eventContentStyle = {
   boxSizing: 'border-box',
   fontWeight: 'bold',
   margin: 'auto',
+  fontSize: 'calc(10px + 0.5vw)',
 };
 
 
