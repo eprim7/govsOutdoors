@@ -70,6 +70,11 @@ function Header() {
             </li>
             <li className={styles['nav-item']}>
               <p className={styles['nav-link']}>
+                <Link to="/cart">Cart</Link>
+              </p>
+            </li>
+            <li className={styles['nav-item']}>
+              <p className={styles['nav-link']}>
                 <Link to="/about">About</Link>
               </p>
             </li>

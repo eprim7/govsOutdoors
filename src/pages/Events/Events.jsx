@@ -7,9 +7,6 @@ function Events(){
 
         <>
         <Header />
-       
-
-
         <h1>Rows with Image on Right and Text on Left</h1>
 
         <div className={styles.rowcontainer}>

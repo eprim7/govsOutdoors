@@ -7,13 +7,8 @@ function Trips(){
 
         <>
         <Header />
-       
-
-
         <h1>Columns of Divs with Picture, Label, and Explanation</h1>
-
         <br></br>
-
 
     {/* row 1  */}
     <div className={styles.row}>
