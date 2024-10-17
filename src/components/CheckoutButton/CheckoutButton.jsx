@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
+import { useStripe, useElements, CardNumberElement, CardCvcElement, CardExpiryElement } from '@stripe/react-stripe-js';
 import styles from './CheckoutButton.module.css';
 
 const CheckoutButton = ({ cartItems }) => {
@@ -56,10 +56,10 @@ const CheckoutButton = ({ cartItems }) => {
       return; 
     }
 
-    const cardElement = elements.getElement(CardElement);
+    const cardNumberElement = elements.getElement(CardNumberElement);
     const result = await stripe.confirmCardPayment(clientSecret, {
       payment_method: {
-        card: cardElement,
+        card: cardNumberElement,
       },
     });
 
@@ -78,7 +78,18 @@ const CheckoutButton = ({ cartItems }) => {
   return (
     <div>
       <form onSubmit={handleSubmit} className={styles.container}>
-        <CardElement className={styles.checkout}/>
+        <div className={styles.inputGroup}>
+          <label>Card Number</label>
+          <CardNumberElement className={styles.checkoutInput} />
+        </div>
+        <div className={styles.inputGroup}>
+          <label>Expiry Date</label>
+          <CardExpiryElement className={styles.checkoutInput} />
+        </div>
+        <div className={styles.inputGroup}>
+          <label>CVV</label>
+          <CardCvcElement className={styles.checkoutInput} />
+        </div>
         <button type="submit" disabled={!stripe || !clientSecret} className={styles.button}>
           Pay
         </button>

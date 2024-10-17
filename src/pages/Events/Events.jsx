@@ -15,9 +15,10 @@ function Events(){
             <div className={styles.labelandexplanation}>
                 <div className={styles.label}>Jump Scare Dyno Competition</div>
                 <br></br>
-                <div className={styles.explanation}>This is the description for the first image. It provides more information about the content displayed in the image. this is for the 
-                    events so blah and talk about climbing.  this event in particular is the jump scare dyno competition.  they shouldnt need a link to more info since you do not have 
-                    to sign up for events just show up.  these are just informational.  
+                <div className={styles.explanation}>We are bringing back our spookyween climbing event for another year! 
+                    This Halloween, join us at the Rock from 2 - 6 PM in your best costume and show off your rock-hopping skills!
+                     A 'dyno' is a jumping move in rock climbing, so this competition will be based on single-move challenges involving
+                      jumping from one hold to another. We will have dynos of all difficulty levels. 
                     <ul>
                         <li><strong>Date:</strong> January 15, 2024</li>
                         <li><strong>Place:</strong> New York City</li>
@@ -34,7 +35,7 @@ function Events(){
         {/* row 2 */}
         <div className={styles.row}>
             <div className={styles.labelandexplanation}>
-                <div className={styles.label}>Label 2</div>
+                <div className={styles.label}>Love Handles</div>
                 <br></br>
                 <div className={styles.explanation}>This is the description for the second image. It provides more details about the subject matter of the image.
                 <ul>

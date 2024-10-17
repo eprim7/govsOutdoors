@@ -1,65 +1,98 @@
-/* Container for the columns */
+.rowcontainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;  /* Space between rows */
+}
+
+/* Row styling */
 .row {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
-  gap: 10px;
-  padding: 15px;
-}
-
-/* Column Divs */
-.column {
-  background-color: white;
+  align-items: center;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 350px;
-  padding: 15px;
+  border: 1px solid gray;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increased blur and spread */
+  padding: 20px;
+  min-height: 200px;  /* Set a minimum height for the rows */
+  margin: 3% 5% 1% 5%; /* Top right bottom left */
+}
+.row:hover{
+  transform: translateY(-5px); /* Lift on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
 }
 
-/* Images inside the columns */
-.column img {
-  width: 100%; /* Makes the image fill the width of the container */
-  height: auto;
-  border-radius: 5px;
+/* Text content */
+.labelandexplanation {
+  font-size: 18px;
+  width: 63%; 
+  margin: 35px;
 }
 
 /* Label styling */
 .label {
   text-align: center;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
   color: #333;
-  margin-top: 15px;
+  margin-bottom: 10px;
 }
 
-/* Explanation styling */
+/* Description styling */
 .explanation {
-  text-align: center;
+  
   font-size: 16px;
   color: #666;
-  margin-top: 10px;
-  
+}
+ /* Unordered list for attributes */
+ .explanation ul {
+  list-style-type: disc;
+  margin: 10px 0;
+  padding-left: 20px;
 }
 
-.learnmore{
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #d32f2f;
-  color: white;
-  text-align: center;
-  border-radius: 20px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-.learnmore:hover {
-  background-color: #b71c1c;
+
+/* Image container */
+.imagecontainer {
+  width: 40%;  
 }
 
-/* Responsive Design for Smaller Screens */
+/* Image styling */
+.imagecontainer img {
+  width: 100%;
+  height: auto;
+}
+
+/* Row 1 Vibe */
+.row-vibe-1 {
+  background-color: #E6F2FF;  /* Light blue background */
+  font-family: 'Georgia', serif;  /* Classy serif font */
+}
+
+/* Row 2 Vibe */
+.row-vibe-2 {
+  background-color: #FFEEE6;  /* Light peach background */
+  font-family: 'Courier New', monospace;  /* Monospace font for a tech vibe */
+}
+
+/* Row 3 Vibe */
+.row-vibe-3 {
+  background-color: #F5F5DC;  /* Beige background */
+  font-family: 'Verdana', sans-serif;  /* Clean sans-serif font */
+}
+
+/* Responsive styles for smaller screens */
 @media (max-width: 768px) {
-  .container {
-      flex-direction: column;
+  .row {
+      flex-direction: column-reverse;
       align-items: center;
+  }
+
+  .text-content {
+      width: 100%;
+      text-align: center;
+  }
+
+  .image-container {
+      width: 100%;
+      margin-bottom: 20px;
   }
 }

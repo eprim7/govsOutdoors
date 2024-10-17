@@ -10,9 +10,15 @@
   display: flex;
   align-items: center;
   border-radius: 8px;
+  border: 1px solid gray;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increased blur and spread */
   padding: 20px;
   min-height: 200px;  /* Set a minimum height for the rows */
+  margin: 3% 5% 1% 5%; /* Top right bottom left */
+}
+.row:hover{
+  transform: translateY(-5px); /* Lift on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
 }
 
 /* Text content */
