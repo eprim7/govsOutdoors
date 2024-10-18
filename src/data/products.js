@@ -61,6 +61,13 @@ const products = [
       description: 'Extremely confortable and large hammock',
       price: 49.99,
       image: '/images/gaming-mouse.jpg',
+    },
+    {
+      id: 10,
+      name: 'Water Filters',
+      description: 'High quality water filters',
+      price: 20.00,
+      image: '/images/gaming-mouse.jpg',
     }
   ];
   
