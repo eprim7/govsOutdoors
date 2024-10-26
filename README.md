@@ -25,7 +25,7 @@
 2. Navigate to the project directory:
 
     ```bash
-    cd repository
+    cd src
     ```
 
 3. Install dependencies:
