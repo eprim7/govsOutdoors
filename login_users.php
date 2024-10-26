@@ -26,6 +26,7 @@ try {
 
     // Fetch the user record
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    
 
     // Check if the user exists
     if ($user && password_verify($password, hash: $user['password'])) {
