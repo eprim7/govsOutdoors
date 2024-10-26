@@ -1,0 +1,77 @@
+.title {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 3rem; /* Larger title for prominence */
+  color: #333;
+}
+
+.productList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px; /* Increased gap for better spacing */
+  padding: 40px; /* Larger padding for a cleaner layout */
+}
+
+.productCard {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 420px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Softer, more prominent shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for hover effect */
+}
+
+.productCard:hover {
+  transform: translateY(-5px); /* Lift on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.productImage {
+  width: 100%;
+  height: 180px; /* Larger images */
+  object-fit: cover;
+  border-radius: 6px; /* Slightly rounded corners */
+}
+
+.productName {
+  font-size: 1.7rem; /* Larger font size */
+  margin: 15px 0;
+  color: #444;
+  font-weight: bold; /* Bolder text for emphasis */
+}
+
+.productDescription {
+  font-size: 1rem;
+  color: #777;
+  height: 60px;
+  overflow: hidden;
+  margin-bottom: 10px; /* Added margin for spacing */
+}
+
+.productPrice {
+  font-size: 1.4rem;
+  font-weight: bold; /* Bold price for emphasis */
+  margin: 10px 0;
+  color: #000;
+}
+
+.addToCartButton {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 12px 18px; /* Increased padding for a larger button */
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1rem; /* Slightly larger font size */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Button shadow for depth */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transition for hover */
+}
+
+.addToCartButton:hover {
+  background-color: #218838;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+  

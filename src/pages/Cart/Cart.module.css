@@ -1,0 +1,74 @@
+.title {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 2.5rem;
+    color: #333;
+  }
+  
+  .emptyCart {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 1.5rem;
+    color: #777;
+  }
+  
+  .cartContainer {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .cartTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .cartTable th, .cartTable td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .quantityInput {
+    width: 60px;
+    padding: 5px;
+    text-align: center;
+  }
+  
+  .removeButton {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .removeButton:hover {
+    background-color: #c82333;
+  }
+  
+  .total {
+    text-align: right;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .clearCartButton {
+    background-color: #ffc107;
+    color: #333;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .clearCartButton:hover {
+    background-color: #e0a800;
+  }
+
+

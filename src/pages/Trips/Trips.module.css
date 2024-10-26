@@ -1,0 +1,98 @@
+.rowcontainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;  /* Space between rows */
+}
+
+/* Row styling */
+.row {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid gray;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increased blur and spread */
+  padding: 20px;
+  min-height: 200px;  /* Set a minimum height for the rows */
+  margin: 3% 5% 1% 5%; /* Top right bottom left */
+}
+.row:hover{
+  transform: translateY(-5px); /* Lift on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+/* Text content */
+.labelandexplanation {
+  font-size: 18px;
+  width: 63%; 
+  margin: 35px;
+}
+
+/* Label styling */
+.label {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Description styling */
+.explanation {
+  
+  font-size: 16px;
+  color: #666;
+}
+ /* Unordered list for attributes */
+ .explanation ul {
+  list-style-type: disc;
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+
+/* Image container */
+.imagecontainer {
+  width: 40%;  
+}
+
+/* Image styling */
+.imagecontainer img {
+  width: 100%;
+  height: auto;
+}
+
+/* Row 1 Vibe */
+.row-vibe-1 {
+  background-color: #E6F2FF;  /* Light blue background */
+  font-family: 'Georgia', serif;  /* Classy serif font */
+}
+
+/* Row 2 Vibe */
+.row-vibe-2 {
+  background-color: #FFEEE6;  /* Light peach background */
+  font-family: 'Courier New', monospace;  /* Monospace font for a tech vibe */
+}
+
+/* Row 3 Vibe */
+.row-vibe-3 {
+  background-color: #F5F5DC;  /* Beige background */
+  font-family: 'Verdana', sans-serif;  /* Clean sans-serif font */
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .row {
+      flex-direction: column-reverse;
+      align-items: center;
+  }
+
+  .text-content {
+      width: 100%;
+      text-align: center;
+  }
+
+  .image-container {
+      width: 100%;
+      margin-bottom: 20px;
+  }
+}

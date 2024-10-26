@@ -1,0 +1,151 @@
+.h1 {
+  margin: 0;
+  text-align: center;
+  color: white;
+  font-size: 2.5em;
+}
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #333333;
+    width: 70%;
+    height: 60vh;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    margin: 6% auto;
+    opacity: 0.9;
+    max-width: 1200px;
+
+  }
+.descriptionDiv{
+    margin-top: 5%;
+}
+.h2 {
+  color: white;
+  word-wrap: normal;
+  line-height: 1.6;
+}
+.map {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin: 6% 2%;
+  height: 500px;
+  width: 400px;
+  background-color: #333333;
+  opacity: 0.85;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #444;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.map:hover, .filler:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+}
+
+.iframe, .filler {
+  height: 400px;
+  width: 300px;
+  border-radius: 15px;
+  margin-top: 5%;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-top: 40px;
+  gap: 30px;
+  padding: 20px;
+}
+.h3 {
+  margin-top: 10%;
+  font-size: 1.2em;
+  color: white; 
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 90%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .map {
+    width: 100%;
+    height: auto;
+    margin: 5% 0;
+  }
+
+  .iframe, .filler {
+    width: 90%;
+    height: auto;
+  }
+
+  .wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .h1 {
+    font-size: 2em;
+  }
+
+  .h3 {
+    font-size: 1em;
+  }
+}
+
+/* Tablets (max width 900px) */
+@media only screen and (max-width: 900px) {
+  .container {
+    width: 80%;
+    height: auto;
+    padding: 25px;
+  }
+
+  .map {
+    width: 80%;
+    margin: 5% auto;
+  }
+
+  .iframe, .filler {
+    width: 80%;
+    height: auto;
+  }
+
+  .h1 {
+    font-size: 1.9em;
+  }
+
+  .h3 {
+    font-size: 1.1em;
+  }
+}
+
+/* Laptops (max width 1200px) */
+@media only screen and (max-width: 1200px) {
+  .container {
+    width: 70%;
+    height: auto;
+  }
+
+  .map {
+    width: 45%;
+  }
+
+  .iframe, .filler {
+    width: 90%;
+  }
+
+  .h1 {
+    font-size: 2.5em;
+  }
+}
