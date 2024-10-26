@@ -1,5 +1,9 @@
 import Header from "../../components/Header/Header";
 import styles from './Trips.module.css';
+import GrandCanyon from '../../assets/grandcanyon.jpg';
+import smokiesTrip from '../../assets/smokiesTrip.jpg';
+import FosterFalls from '../../assets/fosterFallsTrip.jpg';
+
 
 function Trips(){
 
@@ -7,8 +11,6 @@ function Trips(){
 
         <>
         <Header />
-        <h1>Rows with Image on Right and Text on Left</h1>
-
         <div className={styles.rowcontainer}>
         {/* row 1 */}
         <div className={styles.row}>
@@ -27,7 +29,7 @@ function Trips(){
 
             </div>
             <div className={styles.imgagecontainer}>
-                <img src="https://via.placeholder.com/550" alt="Image 1"></img>
+                <img className={styles.image} src={FosterFalls} alt="Foster Falls Trip" />
             </div>
         </div>
 
@@ -48,7 +50,7 @@ function Trips(){
                 
             </div>
             <div className={styles.imgagecontainer}>
-                <img src="https://via.placeholder.com/550" alt="Image 2"></img>
+                <img className={styles.image} src={smokiesTrip} alt="Smokies trip" />
             </div>
         </div>
 
@@ -66,7 +68,7 @@ function Trips(){
                 </div>
             </div>
             <div className={styles.imgagecontainer}>
-                <img src="https://via.placeholder.com/550" alt="Image 3"></img>
+                <img className={styles.image} src={GrandCanyon} alt="grand canyon" />
             </div>
         </div>
     </div>

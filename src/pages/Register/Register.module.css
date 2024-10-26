@@ -18,8 +18,10 @@
     font-size: 20px;
     border: 2px solid black;
     border-radius: 10px;
+    width: 350px;
 }
 .label{
+    padding-top: 10px;
     padding-left: 10px;
     font-size: 1em;
 }
@@ -41,4 +43,16 @@
 .span{
     color: red;
     cursor: pointer;
+}
+.display{
+    width: auto;
+    height: auto;
+    margin-bottom: 30px;
+    margin-left: 10%;
+}
+.error{
+    color: red;
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 3%;
 }
