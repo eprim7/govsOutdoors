@@ -52,13 +52,15 @@
 
 /* Image container */
 .imagecontainer {
-  width: 40%;  
+  width: 30%;
+  overflow: hidden;
 }
 
 /* Image styling */
 .image{
   width: 100%;
-  height: auto;
+  height: 400px;
+  object-fit: cover;
 }
 
 /* Row 1 Vibe */

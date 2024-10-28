@@ -1,9 +1,15 @@
 <?php
 require_once("connect_database.php");
 
+header("Access-Control-Allow-Origin: http://localhost:3000"); // Replace with your frontend origin
+header("Access-Control-Allow-Methods: POST, OPTIONS"); // Allow POST and OPTIONS methods
+header("Access-Control-Allow-Headers: Content-Type"); // Allow Content-Type header
+
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
 
 try {
     // Get the input data

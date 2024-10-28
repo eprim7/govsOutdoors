@@ -2,7 +2,7 @@ import Header from "../../components/Header/Header";
 import styles from './Trips.module.css';
 import GrandCanyon from '../../assets/grandcanyon.jpg';
 import smokiesTrip from '../../assets/smokiesTrip.jpg';
-import FosterFalls from '../../assets/fosterFallsTrip.jpg';
+import FosterFalls from '../../assets/homePicture.png';
 
 
 function Trips(){

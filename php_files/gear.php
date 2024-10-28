@@ -1,6 +1,11 @@
 <?php
 require_once("connect_database.php");
 
+// Add CORS headers
+header("Access-Control-Allow-Origin: http://localhost:3000"); // Allow your React app
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS"); // Specify allowed methods
+header("Access-Control-Allow-Headers: Content-Type"); // Specify allowed headers
+
 try {
     // Disable error reporting to prevent unwanted output
     ini_set('display_errors', 0);

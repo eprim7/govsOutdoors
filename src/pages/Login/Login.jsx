@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../../components/Header/Header";
 import styles from './Login.module.css';
 import { Link, useNavigate } from "react-router-dom";
@@ -7,8 +7,14 @@ function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const navigate = useNavigate();
-    // const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    // Check localStorage on component mount to set initial login state
+    useEffect(() => {
+        const loggedInStatus = localStorage.getItem("isLoggedIn") === "true";
+        setIsLoggedIn(loggedInStatus);
+    }, []);
 
     const handleLogin = async (e) => {
         e.preventDefault(); // Prevent default form submission
@@ -30,14 +36,15 @@ function Login() {
             console.log(result);
 
             if (result.status === 'success') {
-                // Redirect to home page on successful login
+                setIsLoggedIn(true);
+                localStorage.setItem("isLoggedIn", "true");
                 navigate('/');
             } else {
-                setError(result.message); // Set error message to state for display
+                setError(result.message);
             }
         } catch (error) {
             console.error("Error logging in:", error);
-            setError("Login failed. Please try again."); // Generic error message
+            setError("Login failed. Please try again.");
         }
     };
 
@@ -63,8 +70,8 @@ function Login() {
                             id="username" 
                             className={styles.input} 
                             placeholder="Username"
-                            value={username} // Bind value to state
-                            onChange={(e) => setUsername(e.target.value)} // Update state on change
+                            value={username} 
+                            onChange={(e) => setUsername(e.target.value)}
                         />
                         <br />
                         <label htmlFor="password" className={styles.label}><b>Password:</b></label>
@@ -73,12 +80,12 @@ function Login() {
                             id="password" 
                             className={styles.input} 
                             placeholder="Password"
-                            value={password} // Bind value to state
-                            onChange={(e) => setPassword(e.target.value)} // Update state on change
+                            value={password} 
+                            onChange={(e) => setPassword(e.target.value)}
                         />
                         <button type="button" onClick={seePassword} className={styles.display}>See Password</button>
                         <button type="submit" className={styles.button}>Login</button>
-                        {error && <p className={styles.error}>{error}</p>} {/* Show error message if any */}
+                        {error && <p className={styles.error}>{error}</p>}
                     </form>
                 </div>
                 <div>
@@ -90,3 +97,4 @@ function Login() {
 }
 
 export default Login;
+

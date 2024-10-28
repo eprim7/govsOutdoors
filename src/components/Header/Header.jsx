@@ -1,9 +1,25 @@
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./Header.module.css";
 import logo from "../../assets/logo.png";
 
 function Header() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Check localStorage for login status on mount
+    const loggedInStatus = localStorage.getItem("isLoggedIn") === "true";
+    setIsLoggedIn(loggedInStatus);
+  }, []);
+
+  const handleLogout = () => {
+    // Remove login status from localStorage
+    localStorage.setItem("isLoggedIn", "false");
+    setIsLoggedIn(false); // Update state
+    navigate("/"); // Redirect to home page or login page
+  };
+
   useEffect(() => {
     const hamburger = document.querySelector(`.${styles.hamburger}`);
     const navMenu = document.querySelector(`.${styles['nav-menu']}`);
@@ -33,65 +49,39 @@ function Header() {
   }, []);
 
   return (
-    <>
-      <header>
-        <nav className={styles.navbar}>
-            <div className={styles['logo-container']}>
+    <header>
+      <nav className={styles.navbar}>
+        <div className={styles['logo-container']}>
           <h1 className={styles['nav-branding']}>
             <img src={logo} alt="logo" className={styles.logo} />
             <Link to="/">Gov's Outdoors</Link>
           </h1>
-          </div>
-          <ul className={styles['nav-menu']}>
-            <li className={styles['nav-item']}>
-              <p className={styles['nav-link']}>
-                <Link to="/">Home</Link>
-              </p>
-            </li>
-            <li className={styles['nav-item']}>
-              <p className={styles['nav-link']}>
-                <Link to="/schedule">Schedule</Link>
-              </p>
-            </li>
-            <li className={styles['nav-item']}>
-              <p className={styles['nav-link']}>
-                <Link to="/trips">Trips</Link>
-              </p>
-            </li>
-            <li className={styles['nav-item']}>
-              <p className={styles['nav-link']}>
-                <Link to="/events">Events</Link>
-              </p>
-            </li>
-            <li className={styles['nav-item']}>
-              <p className={styles['nav-link']}>
-                <Link to="/gear">Gear</Link>
-              </p>
-            </li>
-            <li className={styles['nav-item']}>
-              <p className={styles['nav-link']}>
-                <Link to="/cart">Cart</Link>
-              </p>
-            </li>
-            <li className={styles['nav-item']}>
-              <p className={styles['nav-link']}>
-                <Link to="/about">About</Link>
-              </p>
-            </li>
-            <li className={styles['nav-item']}>
-              <p className={styles['nav-link']}>
-                <Link to="/Login">Login</Link>
-              </p>
-            </li>
-          </ul>
-          <div className={styles.hamburger}>
-            <span className={styles.bar}></span>
-            <span className={styles.bar}></span>
-            <span className={styles.bar}></span>
-          </div>
-        </nav>
-      </header>
-    </>
+        </div>
+        <ul className={styles['nav-menu']}>
+          <li className={styles['nav-item']}><Link to="/" className={styles['nav-link']}>Home</Link></li>
+          <li className={styles['nav-item']}><Link to="/schedule" className={styles['nav-link']}>Schedule</Link></li>
+          <li className={styles['nav-item']}><Link to="/trips" className={styles['nav-link']}>Trips</Link></li>
+          <li className={styles['nav-item']}><Link to="/events" className={styles['nav-link']}>Events</Link></li>
+          <li className={styles['nav-item']}><Link to="/gear" className={styles['nav-link']}>Gear</Link></li>
+          <li className={styles['nav-item']}><Link to="/cart" className={styles['nav-link']}>Cart</Link></li>
+          <li className={styles['nav-item']}><Link to="/about" className={styles['nav-link']}>About</Link></li>
+          <li className={styles['nav-item']}>
+            <p className={styles['nav-link']}>
+              {isLoggedIn ? (
+                <span onClick={handleLogout} style={{ cursor: "pointer" }}>Logout</span>
+              ) : (
+                <Link to="/login">Login</Link>
+              )}
+            </p>
+          </li>
+        </ul>
+        <div className={styles.hamburger}>
+          <span className={styles.bar}></span>
+          <span className={styles.bar}></span>
+          <span className={styles.bar}></span>
+        </div>
+      </nav>
+    </header>
   );
 }
 

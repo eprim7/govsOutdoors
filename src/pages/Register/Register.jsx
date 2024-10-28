@@ -26,7 +26,6 @@ function Register() {
         }
 
         // CHECKS VALIDITY OF LOGGING IN 
-
         if (username.trim() === '') {
             setError("Username is required."); // Set error for empty username
             return; // Exit the function early
@@ -61,9 +60,12 @@ function Register() {
             }
 
             // Successful registration
-            navigate('/'); // returns user to home page
-            resetForm();
+            // Store the user's logged-in status and email in localStorage
+            localStorage.setItem("isLoggedIn", "true");
+            localStorage.setItem("userEmail", username); // You can use the username or email, whichever is applicable
             
+            navigate('/'); // Redirect user to home page
+            resetForm();
             
         } catch (error) {
             setError("Registration failed. Please try again."); // Fallback error message
@@ -126,5 +128,6 @@ function Register() {
 }
 
 export default Register;
+
 
 
