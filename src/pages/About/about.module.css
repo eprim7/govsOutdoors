@@ -1,3 +1,32 @@
+.image {
+  background-image: url('../../assets/snow.jpg');
+  background-size: cover; /* Change to cover for full-screen effect */
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: rgba(51, 51, 51, 0.9);
+  width: 70%;
+  height: auto;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  margin: 10% auto;
+  max-width: 1200px;
+}
+
 .h1 {
   margin: 0;
   text-align: center;
@@ -34,7 +63,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  margin: 6% 2%;
+  margin: 11% 2% 0%;
   height: 500px;
   width: 400px;
   background-color: #333333;

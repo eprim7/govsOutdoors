@@ -31,7 +31,7 @@ function Cart() {
               {cartItems.map(item => (
                 <tr key={item.id}>
                   <td>{item.name}</td>
-                  <td>${item.price.toFixed(2)}</td>
+                  <td>${Number(item.price).toFixed(2)}</td>
                   <td>
                     <input 
                       type="number" 
@@ -41,7 +41,7 @@ function Cart() {
                       className={styles.quantityInput}
                     />
                   </td>
-                  <td>${(item.price * item.quantity).toFixed(2)}</td>
+                  <td>${Number(item.price * item.quantity).toFixed(2)}</td>
                   <td>
                     <button 
                       className={styles.removeButton} 

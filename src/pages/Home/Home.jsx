@@ -7,8 +7,7 @@ function Home() {
     return (
         <>
             <Header />
-            <div className={styles.container}>
-            </div>
+                <img src="/assets/grandcanyon.jpg" alt="grand canyon" className={styles.container}></img>
         </>
     );
 }

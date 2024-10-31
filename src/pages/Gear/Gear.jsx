@@ -1,13 +1,11 @@
 import React, { useEffect, useState, useContext } from 'react';
 import Header from "../../components/Header/Header";
-// import productsData from '../../data/products';
 import styles from './Gear.module.css';
 import { CartContext } from '../../context/CartContext';
 
 function Gear() {
   const [products, setProducts] = useState([]);
   const { addToCart } = useContext(CartContext);
-
   useEffect(() => {
     fetch('http://localhost/gear.php')
       .then(response => response.json())
@@ -15,11 +13,12 @@ function Gear() {
         if (Array.isArray(data)) {
           setProducts(data);
         } else {
-          setProducts([]);  // Fallback to empty array if data is not an array
+          setProducts([]);
         }
       })
       .catch(error => console.error('Error fetching gear data:', error));
   }, []);
+
   
   return (
     <>
@@ -27,19 +26,23 @@ function Gear() {
       <h1 className={styles.title}>Gear Page</h1>
       <div className={styles.productList}>
       {products.map(product => {
-        const price = Number(product.price) || 0; // Convert to a number, or use 0 as fallback
+        const price = Number(product.price) || 0;
         return (
           <div key={product.id} className={styles.productCard}>
-            <img src={product.image} alt={product.name} className={styles.productImage} />
+            <img src={`/assets/${product.image_url}`} alt={product.name} className={styles.images}/>
             <h2 className={styles.productName}>{product.name}</h2>
             <p className={styles.productDescription}>{product.description}</p>
-            <p className={styles.productPrice}>${price.toFixed(2)}</p> {/* Use price variable */}
+            <p className={styles.productPrice}>${price.toFixed(2)}</p>
             <button 
-              className={styles.addToCartButton} 
-              onClick={() => addToCart(product)}
+                className={styles.addToCartButton} 
+                onClick={() => addToCart({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                })}
             >
-        Add to Cart
-      </button>
+                Add to Cart
+            </button>
     </div>
   );
 })}

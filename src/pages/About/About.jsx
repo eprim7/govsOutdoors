@@ -6,6 +6,7 @@ function About(){
         <>
         <Header />
 
+    <div className={styles.image}>
         <div className={styles.container}>
             <br />
             <h1 className={styles.h1}>About Gov's Outdoors</h1>
@@ -55,6 +56,7 @@ function About(){
             </div>
 
             </div>
+        </div>
         </>
     );
 }

@@ -74,4 +74,9 @@
   background-color: #218838;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
 }
+.images{
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
+}
   
