@@ -1,0 +1,24 @@
+.container {
+    background-color: rgba(0, 0, 0, 0.8); /* Slight transparency */
+    height: 200px;
+    width: 300px; /* Wider for better readability */
+    color: #ffffff; /* Pure white text for contrast */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Allows content to stack vertically */
+    text-align: center;
+    margin: auto;
+    margin-top: 10%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+    z-index: -1;
+    border: 2px solid red
+}
+.span {
+    margin-top: 15px; /* More reasonable top margin */
+    font-size: 1.1rem; /* Adjust font size for readability */
+    font-weight: 500; /* Slightly bold */
+    color: #e0e0e0; /* Softer white */
+}

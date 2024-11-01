@@ -38,6 +38,8 @@ function Login() {
             if (result.status === 'success') {
                 setIsLoggedIn(true);
                 localStorage.setItem("isLoggedIn", "true");
+                localStorage.setItem("userEmail", username); // Assuming result.email is returned from the server
+                localStorage.setItem("isLoggedIn", "true");
                 navigate('/');
             } else {
                 setError(result.message);

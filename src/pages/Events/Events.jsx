@@ -54,7 +54,7 @@ function Events(){
         {/* row 3 */}
         <div className={styles.row}>
             <div className={styles.labelandexplanation}>
-                <div className={styles.label}>Label 3</div>
+                <div className={styles.label}>Bouldering Competition</div>
                 <br></br>
                 <div className={styles.explanation}>This is the description for the third image. It gives context to what the image is illustrating.
                 <ul>

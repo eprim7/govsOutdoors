@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./Header.module.css";
-import logo from "../../assets/logo.png";
 
 function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -53,7 +52,7 @@ function Header() {
       <nav className={styles.navbar}>
         <div className={styles['logo-container']}>
           <h1 className={styles['nav-branding']}>
-            <img src={logo} alt="logo" className={styles.logo} />
+            <img src="/assets/logo.png" alt="logo" className={styles.logo} />
             <Link to="/">Gov's Outdoors</Link>
           </h1>
         </div>

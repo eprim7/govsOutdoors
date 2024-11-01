@@ -1,5 +1,4 @@
 .image {
-  background-image: url('../../assets/snow.jpg');
   background-size: cover; /* Change to cover for full-screen effect */
   background-position: center;
   background-repeat: no-repeat;

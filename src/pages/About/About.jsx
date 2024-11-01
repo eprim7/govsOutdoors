@@ -6,7 +6,7 @@ function About(){
         <>
         <Header />
 
-    <div className={styles.image}>
+        <img src="/assets/snow.jpg" alt="snow" className={styles.image}></img>
         <div className={styles.container}>
             <br />
             <h1 className={styles.h1}>About Gov's Outdoors</h1>
@@ -56,8 +56,7 @@ function About(){
             </div>
 
             </div>
-        </div>
-        </>
+       </>
     );
 }
 

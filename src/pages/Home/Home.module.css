@@ -1,7 +1,12 @@
 h1 {
   text-align: center; /* Center align the heading */
 }
-
+.welcomeContainer {
+  position: absolute;
+  top: 20px; /* Distance from the top of the page */
+  right: 20px; /* Distance from the right edge of the page */
+  z-index: 10; /* Ensures it stays on top of other elements */
+}
 .container {
   display: flex;
   justify-content: center;
