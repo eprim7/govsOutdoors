@@ -7,7 +7,7 @@ function Events(){
 
         <>
         <Header />
-        <h1>Rows with Image on Right and Text on Left</h1>
+        <h1 className={styles.header}>Future Events</h1>
 
         <div className={styles.rowcontainer}>
         {/* row 1 */}

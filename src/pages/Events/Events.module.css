@@ -4,6 +4,10 @@
   flex-direction: column;
   gap: 20px;  /* Space between rows */
 }
+.header{
+  text-align: center;
+  margin-top: 5%;
+}
 
 /* Row styling */
 .row {

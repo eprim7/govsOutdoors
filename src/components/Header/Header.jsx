@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { CartContext } from "../../context/CartContext";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./Header.module.css";
 
 function Header() {
+  const {clearCart} = useContext(CartContext);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
 
@@ -14,6 +16,7 @@ function Header() {
 
   const handleLogout = () => {
     // Remove login status from localStorage
+    clearCart();
     localStorage.setItem("isLoggedIn", "false");
     setIsLoggedIn(false); // Update state
     navigate("/"); // Redirect to home page or login page
@@ -48,7 +51,7 @@ function Header() {
   }, []);
 
   return (
-    <header>
+    <header className={styles.header}>
       <nav className={styles.navbar}>
         <div className={styles['logo-container']}>
           <h1 className={styles['nav-branding']}>

@@ -40,6 +40,7 @@ function Login() {
                 localStorage.setItem("isLoggedIn", "true");
                 localStorage.setItem("userEmail", username); // Assuming result.email is returned from the server
                 localStorage.setItem("isLoggedIn", "true");
+                localStorage.setItem("justLoggedIn", "true");
                 navigate('/');
             } else {
                 setError(result.message);

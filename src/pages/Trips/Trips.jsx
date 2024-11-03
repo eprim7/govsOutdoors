@@ -5,6 +5,8 @@ function Trips() {
     return (
         <>
             <Header />
+            <h1 className={styles.header}>Future Trips</h1>
+
             <div className={styles.rowcontainer}>
                 {/* row 1 */}
                 <div className={styles.row}>

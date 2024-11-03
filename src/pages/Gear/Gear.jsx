@@ -23,7 +23,7 @@ function Gear() {
   return (
     <>
       <Header />
-      <h1 className={styles.title}>Gear Page</h1>
+      <h1 className={styles.title}>Shop With Us!</h1>
       <div className={styles.productList}>
       {products.map(product => {
         const price = Number(product.price) || 0;
