@@ -19,10 +19,10 @@ function Register() {
         setIsValid(isPasswordValid); // Check password validity
 
         const resetForm = () => {
-            setUsername(''); // clears the username field
-            setPassword(''); // clears the password field
-            setConfirmPassword(''); // clears the confirm password field
-            setError(''); // Clear any previous error message
+            setUsername(''); // clears username
+            setPassword(''); // clears password 
+            setConfirmPassword(''); // clears confirm password 
+            setError(''); // Clear error message
         }
 
         // CHECKS VALIDITY OF LOGGING IN 
@@ -63,6 +63,7 @@ function Register() {
             // Store the user's logged-in status and email in localStorage
             localStorage.setItem("isLoggedIn", "true");
             localStorage.setItem("userEmail", username); // You can use the username or email, whichever is applicable
+            localStorage.setItem("justLoggedIn", "true"); // Set this to trigger the welcome message
             
             navigate('/'); // Redirect user to home page
             resetForm();

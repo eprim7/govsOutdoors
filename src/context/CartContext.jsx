@@ -6,10 +6,9 @@ export const CartProvider = ({ children }) => {
     const [cartItems, setCartItems] = useState([]);
 
     const addToCart = (product) => {
-        // Check if the user is logged in every time addToCart is called
-        const isLoggedIn = localStorage.getItem("isLoggedIn") === "true"; // Dynamic check
+        const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
         if (!isLoggedIn) {
-            alert('You must be logged in to add items to your cart.'); // Alert user if not logged in
+            alert('You must be logged in to add items to your cart.');
             return;
         }
         setCartItems((prevCartItems) => {

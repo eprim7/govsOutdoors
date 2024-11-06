@@ -2,9 +2,10 @@
 .rowcontainer {
   display: flex;
   flex-direction: column;
-  gap: 20px;  /* Space between rows */
+  gap: 20px; /* Space between rows */
 }
-.header{
+
+.header {
   text-align: center;
   margin-top: 5%;
 }
@@ -17,10 +18,11 @@
   border: 1px solid gray;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increased blur and spread */
   padding: 20px;
-  min-height: 200px;  /* Set a minimum height for the rows */
+  min-height: 200px; /* Set a minimum height for the rows */
   margin: 3% 5% 1% 5%; /* Top right bottom left */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
 }
-.row:hover{
+.row:hover {
   transform: translateY(-5px); /* Lift on hover */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
 }
@@ -28,7 +30,7 @@
 /* Text content */
 .labelandexplanation {
   font-size: 18px;
-  width: 63%; 
+  width: 63%;
   margin: 35px;
 }
 
@@ -41,23 +43,37 @@
   margin-bottom: 10px;
 }
 
+.register {
+  margin-top: 10%;
+  margin-left: 10%;
+  background-color: #ff5733;
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.register:hover {
+  background-color: #ff7855;
+}
+
 /* Description styling */
 .explanation {
-  
   font-size: 16px;
   color: #666;
 }
- /* Unordered list for attributes */
- .explanation ul {
+
+/* Unordered list for attributes */
+.explanation ul {
   list-style-type: disc;
   margin: 10px 0;
   padding-left: 20px;
 }
 
-
 /* Image container */
 .imagecontainer {
-  width: 40%;  
+  width: 40%;
 }
 
 /* Image styling */
@@ -68,36 +84,49 @@
 
 /* Row 1 Vibe */
 .row-vibe-1 {
-  background-color: #E6F2FF;  /* Light blue background */
-  font-family: 'Georgia', serif;  /* Classy serif font */
+  background-color: #E6F2FF; /* Light blue background */
+  font-family: 'Georgia', serif; /* Classy serif font */
 }
 
 /* Row 2 Vibe */
 .row-vibe-2 {
-  background-color: #FFEEE6;  /* Light peach background */
-  font-family: 'Courier New', monospace;  /* Monospace font for a tech vibe */
+  background-color: #FFEEE6; /* Light peach background */
+  font-family: 'Courier New', monospace; /* Monospace font for a tech vibe */
 }
 
 /* Row 3 Vibe */
 .row-vibe-3 {
-  background-color: #F5F5DC;  /* Beige background */
-  font-family: 'Verdana', sans-serif;  /* Clean sans-serif font */
+  background-color: #F5F5DC; /* Beige background */
+  font-family: 'Verdana', sans-serif; /* Clean sans-serif font */
 }
 
 /* Responsive styles for smaller screens */
 @media (max-width: 768px) {
   .row {
-      flex-direction: column-reverse;
-      align-items: center;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 15px;
+    margin: 5% 2%; /* Reduced margins for small screens */
   }
 
-  .text-content {
-      width: 100%;
-      text-align: center;
+  .labelandexplanation {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
   }
 
-  .image-container {
-      width: 100%;
-      margin-bottom: 20px;
+  .imagecontainer {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .label {
+    font-size: 20px; /* Slightly smaller font size */
+  }
+
+  .register {
+    margin: 20px 0; /* Center the button */
+    width: 80%;
+    font-size: 0.9rem; /* Smaller font for smaller screens */
   }
 }

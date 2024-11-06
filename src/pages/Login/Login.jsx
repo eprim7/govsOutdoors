@@ -38,10 +38,10 @@ function Login() {
             if (result.status === 'success') {
                 setIsLoggedIn(true);
                 localStorage.setItem("isLoggedIn", "true");
-                localStorage.setItem("userEmail", username); // Assuming result.email is returned from the server
-                localStorage.setItem("isLoggedIn", "true");
-                localStorage.setItem("justLoggedIn", "true");
+                localStorage.setItem("userEmail", username);
+                localStorage.setItem("justLoggedIn", "true"); // Set directly after login
                 navigate('/');
+                setTimeout(() => localStorage.removeItem("justLoggedIn"), 1000); // Remove shortly after navigating
             } else {
                 setError(result.message);
             }

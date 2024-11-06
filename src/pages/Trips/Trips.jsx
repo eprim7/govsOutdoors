@@ -56,7 +56,8 @@ function Trips() {
                         <div className={styles.label}>Grand Canyon Trip</div>
                         <br />
                         <div className={styles.explanation}>
-                            This is the description for the third image. It gives context to what the image is illustrating.
+                            Have you always wanted to witness the beauty of the Grand Canyon? Wanting an adventure over spring break? 
+                            Come with us on our trip to the Grand Canyon, as we will hike through and see nature's true beauty
                             <ul>
                                 <li><strong>Date:</strong> 3/10/25 - 3/14/25</li>
                                 <li><strong>Place:</strong> Grand Canyon National Park, Arizona</li>

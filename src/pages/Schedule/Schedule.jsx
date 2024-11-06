@@ -22,6 +22,12 @@ const eventsData = [
     end: '2024-09-15T16:00:00',
     description: 'An exciting climbing event at the bluffs.',
   },
+  {
+    title: 'Jump Scare Dyno Comp',
+    start: '2024-10-31T14:00:00',
+    end: '2024-10-31T16:00:00',
+    description: 'An exciting climbing event at the bluffs.',
+  },
 ];
 
 const eventContentStyle = {

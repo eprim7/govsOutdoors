@@ -24,10 +24,14 @@ function Events(){
                         <li><strong>Place:</strong> New York City</li>
                         <li><strong>Other:</strong> Exclusive event for VIP members</li>
                     </ul>
+                    <button className={styles.register}>Register Now</button>
+
                 </div>
 
+
             </div>
-            <div className={styles.imgagecontainer}>
+
+            <div className={styles.imagecontainer}>
                 <img src="https://via.placeholder.com/550" alt="Image 1"></img>
             </div>
         </div>
@@ -43,10 +47,12 @@ function Events(){
                         <li><strong>Place:</strong> New York City</li>
                         <li><strong>Other:</strong> Exclusive event for VIP members</li>
                     </ul>
+                    <button className={styles.register}>Register Now</button>
+
                 </div>
                 
             </div>
-            <div className={styles.imgagecontainer}>
+            <div className={styles.imagecontainer}>
                 <img src="https://via.placeholder.com/550" alt="Image 2"></img>
             </div>
         </div>
@@ -62,9 +68,11 @@ function Events(){
                         <li><strong>Place:</strong> New York City</li>
                         <li><strong>Other:</strong> Exclusive event for VIP members</li>
                     </ul>
+                    <button className={styles.register}>Register Now</button>
+
                 </div>
             </div>
-            <div className={styles.imgagecontainer}>
+            <div className={styles.imagecontainer}>
                 <img src="https://via.placeholder.com/550" alt="Image 3"></img>
             </div>
         </div>
