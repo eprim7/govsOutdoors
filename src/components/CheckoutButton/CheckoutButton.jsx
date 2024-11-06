@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useStripe, useElements, CardNumberElement, CardCvcElement, CardExpiryElement } from '@stripe/react-stripe-js';
 import styles from './CheckoutButton.module.css';
+import SuccessfulPayment from '../../pages/SuccessfulPayment/SuccessfulPayment';
+import { Link, useNavigate } from "react-router-dom";
+
 
 const CheckoutButton = ({ cartItems }) => {
   const stripe = useStripe();
@@ -8,39 +11,50 @@ const CheckoutButton = ({ cartItems }) => {
   const [clientSecret, setClientSecret] = useState('');
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
+  const navigate = useNavigate();
+
 
   // Function to calculate the total cart amount
   useEffect(() => {
     const calculateCartTotal = () => {
       const total = cartItems.reduce((total, item) => {
-        if (typeof item.price !== 'number' || typeof item.quantity !== 'number') {
+        // Convert price to a number before doing the calculation
+        const price = parseFloat(item.price);  // Or you could use `Number(item.price)`
+        const quantity = item.quantity;
+    
+        if (isNaN(price) || typeof quantity !== 'number') {
           console.error(`Invalid item: ${JSON.stringify(item)}`);
           return total; // Skip invalid items
         }
-        return total + (item.price * item.quantity);
+    
+        return total + (price * quantity);
       }, 0);
-      return Math.round(total * 100);
+    
+      return Math.round(total * 100); // Convert to cents
     };
+    
   
     const cartTotal = calculateCartTotal();
-
+    console.log("Calculated cart total:", cartTotal); // Log the total for debugging
+  
     // Ensure amount is valid
     if (cartTotal <= 0) {
       console.error('Invalid total amount: ', cartTotal);
       setError('Total amount must be greater than zero.');
       return;
     }
-
-    fetch('http://localhost:3000/create-payment-intent', { 
+  
+    fetch('http://localhost/create-payment-intent.php', {  // Adjust the URL to point to your PHP backend
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ amount: cartTotal }) // Send total amount (in cents)
+      body: JSON.stringify({ amount: cartTotal }), // Send total amount (in cents)
     })
       .then((response) => {
         if (!response.ok) throw new Error('Failed to fetch client secret');
         return response.json();
       })
       .then((data) => {
+        console.log('Received client secret:', data.clientSecret); // Log the response
         setClientSecret(data.clientSecret); // Set client secret from backend
       })
       .catch((error) => {
@@ -53,10 +67,13 @@ const CheckoutButton = ({ cartItems }) => {
     event.preventDefault();
 
     if (!stripe || !elements) {
-      return; 
+      return; // Stripe.js has not loaded yet
     }
 
     const cardNumberElement = elements.getElement(CardNumberElement);
+    const cardExpiryElement = elements.getElement(CardExpiryElement);
+    const cardCvcElement = elements.getElement(CardCvcElement);
+
     const result = await stripe.confirmCardPayment(clientSecret, {
       payment_method: {
         card: cardNumberElement,
@@ -71,9 +88,14 @@ const CheckoutButton = ({ cartItems }) => {
         setSuccess(true);
         setError(null);
         console.log('Payment successful!', result.paymentIntent);
+        <SuccessfulPayment />
       }
     }
   };
+
+  if (success) {
+    navigate('/successful');
+  }
 
   return (
     <div>
@@ -101,3 +123,4 @@ const CheckoutButton = ({ cartItems }) => {
 };
 
 export default CheckoutButton;
+

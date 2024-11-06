@@ -22,7 +22,7 @@ function About(){
         </div>
 
         <div className={styles.wrapper}>
-            <div className={styles.map}>
+            <div className={styles.card}>
                 <h1 className={styles.h1}>Find Us Here</h1>
                 <iframe className={styles.iframe}
                         title="map of foy fitness center in Clarksville, Tn"
@@ -32,7 +32,7 @@ function About(){
                         referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
-            <div className={styles.map}>
+            <div className={styles.card}>
             <h1 className={styles.h1}>Contact Us Here</h1>
                 <div className={styles.filler}>
                     <br />
@@ -43,7 +43,7 @@ function About(){
                     <h3 className={styles.h3}>Address: 451 Marion St, Clarksville, TN 37040</h3>
                 </div>
             </div>
-            <div className={styles.map}>
+            <div className={styles.card}>
             <h1 className={styles.h1}>Hours Of Operation</h1>
                 <div className={styles.filler}>
                     <br />

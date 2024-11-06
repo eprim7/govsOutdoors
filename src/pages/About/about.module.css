@@ -56,7 +56,7 @@
   word-wrap: normal;
   line-height: 1.6;
 }
-.map {
+.card {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -72,7 +72,7 @@
   background-color: #444;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.map:hover, .filler:hover {
+.card:hover, .filler:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   transform: translateY(-5px);
 }
