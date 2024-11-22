@@ -27,7 +27,7 @@ try {
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
     // Prepare the SQL statement to prevent SQL injection
-    $stmt = $db->prepare("INSERT INTO users (username, password) VALUES (:username, :password)");
+    $stmt = $db->prepare("INSERT INTO users2 (username, password) VALUES (:username, :password)");
 
     // Bind parameters
     $stmt->bindParam(':username', $username);

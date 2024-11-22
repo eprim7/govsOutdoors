@@ -26,7 +26,7 @@ try {
     $password = $data['password'];
 
     // Prepare the SQL statement to prevent SQL injection
-    $stmt = $db->prepare("SELECT password FROM users WHERE username = :username");
+    $stmt = $db->prepare("SELECT password FROM users2 WHERE username = :username");
     $stmt->bindParam(':username', $username);
     $stmt->execute();
 

@@ -60,7 +60,7 @@ try {
     echo json_encode(['error' => 'Failed to create payment intent: ' . $e->getMessage()]);
 }
 
-
+?>
 
 
 

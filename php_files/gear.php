@@ -12,7 +12,7 @@ try {
     error_reporting(0);
 
     // Select all gear items from the database
-    $query = 'SELECT * FROM gear';
+    $query = 'SELECT * FROM gear2';
     $statement = $db->prepare($query);
     $statement->execute();
 
