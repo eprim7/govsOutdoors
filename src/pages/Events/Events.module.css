@@ -46,7 +46,7 @@
 .register {
   margin-top: 10%;
   margin-left: 10%;
-  background-color: #ff5733;
+  background-color: #28a745;
   padding: 10px 20px;
   color: white;
   border: none;
@@ -55,7 +55,7 @@
   transition: background-color 0.3s ease;
 }
 .register:hover {
-  background-color: #ff7855;
+  background-color: #218838;
 }
 
 /* Description styling */

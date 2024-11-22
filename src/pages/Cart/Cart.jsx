@@ -1,13 +1,51 @@
 import React, { useContext } from 'react';
 import styles from './Cart.module.css';
 import Header from '../../components/Header/Header';
-import CheckoutButton from '../../components/CheckoutButton/CheckoutButton'; // Ensure correct path
+import CheckoutButton from '../../components/CheckoutButton/CheckoutButton';
 import { CartContext } from '../../context/CartContext';
 
 function Cart() {
   const { cartItems, removeFromCart, updateQuantity, clearCart } = useContext(CartContext);
 
   const totalAmount = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2);
+  const storedUsername = localStorage.getItem("userEmail");
+
+  const submitCartToBackend = () => {
+    if (cartItems.length === 0) {
+      alert("Your cart is empty!");
+      return;
+    }
+
+    cartItems.forEach(item => {
+      const cartData = {
+        gear_id: item.id,
+        username: storedUsername,
+        rent_date: new Date().toISOString().slice(0, 10), // Current date in YYYY-MM-DD format
+        price: item.price * item.quantity,
+      };
+
+      fetch('http://localhost/save-purchase.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(cartData),
+      })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Response from backend:', data);
+          if (data.status === 'success') {
+            // alert(`Item "${item.name}" successfully submitted!`);
+          } else {
+            // alert(`Error submitting item "${item.name}": ${data.message}`);
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          alert(`Failed to submit item "${item.name}" to the backend.`);
+        });
+    });
+  };
 
   return (
     <>
@@ -57,7 +95,7 @@ function Cart() {
           <div className={styles.total}>
             <h2>Total: ${totalAmount}</h2>
           </div>
-          <CheckoutButton cartItems={cartItems} />
+          <CheckoutButton cartItems={cartItems} submitCartToBackend={submitCartToBackend}/>
           <button className={styles.clearCartButton} onClick={clearCart}>
             Clear Cart
           </button>

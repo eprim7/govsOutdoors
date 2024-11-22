@@ -70,8 +70,7 @@ h1 {
 .ctaButton {
   margin-top: 20px;
   padding: 10px 20px;
-  background-color: #ff5733;
-  color: white;
+  background-color: #28a745;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -82,7 +81,7 @@ h1 {
 
 .ctaButton:hover {
   transform: scale(1.05);
-  background-color: #ff7855;
+  background-color: #218838;
 }
 
 /* Fade-in animation */

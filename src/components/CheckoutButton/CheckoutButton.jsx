@@ -1,17 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useStripe, useElements, CardNumberElement, CardCvcElement, CardExpiryElement } from '@stripe/react-stripe-js';
 import styles from './CheckoutButton.module.css';
-import SuccessfulPayment from '../../pages/SuccessfulPayment/SuccessfulPayment';
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";  
+import { CartContext } from '../../context/CartContext';
 
 
-const CheckoutButton = ({ cartItems }) => {
+const CheckoutButton = ({ cartItems, submitCartToBackend}) => {
   const stripe = useStripe();
   const elements = useElements();
   const [clientSecret, setClientSecret] = useState('');
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
   const navigate = useNavigate();
+  const { clearCart } = useContext(CartContext);
 
 
   // Function to calculate the total cart amount
@@ -54,7 +55,6 @@ const CheckoutButton = ({ cartItems }) => {
         return response.json();
       })
       .then((data) => {
-        console.log('Received client secret:', data.clientSecret); // Log the response
         setClientSecret(data.clientSecret); // Set client secret from backend
       })
       .catch((error) => {
@@ -71,8 +71,6 @@ const CheckoutButton = ({ cartItems }) => {
     }
 
     const cardNumberElement = elements.getElement(CardNumberElement);
-    const cardExpiryElement = elements.getElement(CardExpiryElement);
-    const cardCvcElement = elements.getElement(CardCvcElement);
 
     const result = await stripe.confirmCardPayment(clientSecret, {
       payment_method: {
@@ -88,14 +86,12 @@ const CheckoutButton = ({ cartItems }) => {
         setSuccess(true);
         setError(null);
         console.log('Payment successful!', result.paymentIntent);
-        <SuccessfulPayment />
+        submitCartToBackend();
+        navigate('/successful');
+    clearCart();
       }
     }
   };
-
-  if (success) {
-    navigate('/successful');
-  }
 
   return (
     <div>

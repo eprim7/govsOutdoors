@@ -33,26 +33,26 @@ function About(){
                 </iframe>
             </div>
             <div className={styles.card}>
-            <h1 className={styles.h1}>Contact Us Here</h1>
-                <div className={styles.filler}>
-                    <br />
-                    <h3 className={styles.h3}>Phone Number: (931) 221-6976</h3>
-                    <br />
-                    <h3 className={styles.h3}>Email: murchisonm@apsu.edu</h3>
-                    <br />
-                    <h3 className={styles.h3}>Address: 451 Marion St, Clarksville, TN 37040</h3>
-                </div>
+                <h1 className={styles.h1}>Contact Us Here</h1>
+                    <div className={styles.filler}>
+                        <br />
+                        <h3 className={styles.h3}>Phone Number: (931) 221-6976</h3>
+                        <br />
+                        <h3 className={styles.h3}>Email: murchisonm@apsu.edu</h3>
+                        <br />
+                        <h3 className={styles.h3}>Address: 451 Marion St, Clarksville, TN 37040</h3>
+                    </div>
             </div>
             <div className={styles.card}>
-            <h1 className={styles.h1}>Hours Of Operation</h1>
-                <div className={styles.filler}>
-                    <br />
-                    <h3 className={styles.h3}>Monday-Friday: 6:00a - 9:00p</h3>
-                    <br />
-                    <h3 className={styles.h3}>Saturday: 9:00a - 5:00p</h3>
-                    <br />
-                    <h3 className={styles.h3}>Sunday: 12:00p - 9:00p</h3>
-                </div>
+                <h1 className={styles.h1}>Hours Of Operation</h1>
+                    <div className={styles.filler}>
+                        <br />
+                        <h3 className={styles.h3}>Monday-Friday: 6:00a - 9:00p</h3>
+                        <br />
+                        <h3 className={styles.h3}>Saturday: 9:00a - 5:00p</h3>
+                        <br />
+                        <h3 className={styles.h3}>Sunday: 12:00p - 9:00p</h3>
+                    </div>
             </div>
 
             </div>

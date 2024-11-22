@@ -5,7 +5,7 @@
 }
 
 .logo {
-    height: 60px; /* Adjust the logo size */
+    height: 60px;
     margin-right: 10px;
 }
 
@@ -15,6 +15,9 @@
 
 header {
     background-color: red;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 li {
@@ -32,7 +35,6 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 0 24px;
-    position: relative;
 }
 
 .nav-menu {
@@ -40,6 +42,7 @@ a {
     justify-content: space-between;
     align-items: center;
     gap: 60px;
+    overflow-y: auto;
 }
 
 .nav-branding {
@@ -80,7 +83,7 @@ a {
 @media (max-width: 1200px) {
     .hamburger {
         display: block;
-        position: fixed; 
+        position: absolute; 
         top: 20px; 
         right: 20px;
         z-index: 10000;
@@ -109,17 +112,17 @@ a {
         height: 100vh;
         text-align: center;
         transition: 0.3s;
-        z-index: 9999;
+        z-index: 9999; /* Ensure the menu stays on top */
         justify-content: center;
         align-items: center;
-    }
-
-    .nav-item {
-        margin: 16px 0;
     }
 
     .nav-menu.active {
         left: 0;
         display: flex;
+    }
+
+    .nav-item {
+        margin: 16px 0;
     }
 }

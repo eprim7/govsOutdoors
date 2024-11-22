@@ -26,26 +26,26 @@ function Gear() {
       <h1 className={styles.title}>Shop With Us!</h1>
       <div className={styles.productList}>
       {products.map(product => {
-        const price = Number(product.price) || 0;
-        return (
-          <div key={product.id} className={styles.productCard}>
-            <img src={`/assets/${product.image_url}`} alt={product.name} className={styles.images}/>
-            <h2 className={styles.productName}>{product.name}</h2>
-            <p className={styles.productDescription}>{product.description}</p>
-            <p className={styles.productPrice}>${price.toFixed(2)}</p>
-            <button 
-                className={styles.addToCartButton} 
-                onClick={() => addToCart({
-                    id: product.id,
-                    name: product.name,
-                    price: product.price,
-                })}
-            >
-                Add to Cart
-            </button>
-    </div>
-  );
-})}
+  const price = Number(product.price) || 0;
+      return (
+        <div key={product.gear_id} className={styles.productCard}>
+          <img src={`/assets/${product.image_url}`} alt={product.name} className={styles.images}/>
+          <h2 className={styles.productName}>{product.name}</h2>
+          <p className={styles.productDescription}>{product.description}</p>
+          <p className={styles.productPrice}>${price.toFixed(2)}</p>
+          <button 
+            className={styles.addToCartButton} 
+            onClick={() => addToCart({
+                id: product.gear_id,
+                name: product.name,
+                price: product.price,
+            })}
+          >
+            Add to Cart
+          </button>
+        </div>
+      );
+    })}
       </div>
     </>
   );
