@@ -61,12 +61,13 @@ function Header() {
         </div>
         <ul className={styles['nav-menu']}>
           <li className={styles['nav-item']}><Link to="/" className={styles['nav-link']}>Home</Link></li>
-          <li className={styles['nav-item']}><Link to="/schedule" className={styles['nav-link']}>Schedule</Link></li>
+          {/*<li className={styles['nav-item']}><Link to="/schedule" className={styles['nav-link']}>Schedule</Link></li> */}
           <li className={styles['nav-item']}><Link to="/trips" className={styles['nav-link']}>Trips</Link></li>
           <li className={styles['nav-item']}><Link to="/events" className={styles['nav-link']}>Events</Link></li>
           <li className={styles['nav-item']}><Link to="/gear" className={styles['nav-link']}>Gear</Link></li>
           <li className={styles['nav-item']}><Link to="/cart" className={styles['nav-link']}>Cart</Link></li>
           <li className={styles['nav-item']}><Link to="/about" className={styles['nav-link']}>About</Link></li>
+          <li className={styles['nav-item']}><Link to="/profile" className={styles['nav-link']}>Profile</Link></li>
           <li className={styles['nav-item']}>
             <p className={styles['nav-link']}>
               {isLoggedIn ? (

@@ -80,6 +80,7 @@
 .imagecontainer img {
   width: 100%;
   height: auto;
+  border-radius: 5%;
 }
 
 /* Row 1 Vibe */

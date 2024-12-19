@@ -32,7 +32,7 @@ function Events(){
             </div>
 
             <div className={styles.imagecontainer}>
-                <img src="https://via.placeholder.com/550" alt="Image 1"></img>
+                <img src="/assets/dyno.png" alt="Dyno Comp" title="Man jumping for next hold"></img>
             </div>
         </div>
 
@@ -53,7 +53,7 @@ function Events(){
                 
             </div>
             <div className={styles.imagecontainer}>
-                <img src="https://via.placeholder.com/550" alt="Image 2"></img>
+                <img src="/assets/loveHandles.png" alt="Love Handles" title="Group of people watching climbing"></img>
             </div>
         </div>
 
@@ -73,7 +73,7 @@ function Events(){
                 </div>
             </div>
             <div className={styles.imagecontainer}>
-                <img src="https://via.placeholder.com/550" alt="Image 3"></img>
+                <img src="/assets/bouldering.png" alt="Kids Bouldering" title="Kids Bouldering"></img>
             </div>
         </div>
     </div>

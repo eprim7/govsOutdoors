@@ -32,13 +32,17 @@
 }
 .button{
     border-radius: 20px;
-    width: 150px;
+    width: 250px;
     margin-top: 3%;
     text-align: center;
     margin: auto;
     display: flex;
     display: grid;
     cursor: pointer;
+    background-color: #28a745;
+}
+.button:hover{
+    background-color: #218838;
 }
 .span{
     color: red;
@@ -49,6 +53,14 @@
     height: auto;
     margin-bottom: 30px;
     margin-left: 10%;
+    background-color: #28a745;
+    border-radius: 5%;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 7%;
+}
+.display:hover{
+    background-color: #218838;
 }
 .error{
     color: red;

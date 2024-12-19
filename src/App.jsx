@@ -6,10 +6,11 @@ import { Elements } from '@stripe/react-stripe-js';
 
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
-import Schedule from './pages/Schedule/Schedule';
+// import Schedule from './pages/Schedule/Schedule';
 import Trips from './pages/Trips/Trips';
 import Login from './pages/Login/Login';
 import Gear from './pages/Gear/Gear';
+import Profile from './pages/Profile/Profile';
 import PageNotFound from './pages/404/404';
 import Events from './pages/Events/Events';
 import Register from './pages/Register/Register';
@@ -27,14 +28,15 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="about" element={<About />} />
-            <Route path="schedule" element={<Schedule />} />
             <Route path="trips" element={<Trips />} />
-            <Route path="login" element={<Login />} />
             <Route path="events" element={<Events />} />
             <Route path="gear" element={<Gear />} />
-            <Route path="register" element={<Register />} />
             <Route path="cart" element={<Cart />} />
+            <Route path="about" element={<About />} />
+            <Route path="profile" element={<Profile />} />
+            {/*<Route path="schedule" element={<Schedule />} /> */}
+            <Route path="login" element={<Login />} />
+            <Route path="register" element={<Register />} />
             <Route path="successful" element={<SuccessfulPayment />}/>
             <Route path="*" element={<PageNotFound />} />
           </Routes>

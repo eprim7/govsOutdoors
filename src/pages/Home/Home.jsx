@@ -17,7 +17,7 @@ function Home() {
                 <div className={styles.overlayText}>
                     <h1>Welcome to Your Adventure with Gov's Outdoors</h1>
                     <p>Start your journey into the beautiful outdoors by learning more about us here</p>
-                    <button className={styles.ctaButton}><Link to="/about">Learn More</Link></button>
+                    <button className={styles.ctaButton}><Link to="/about" className={styles.learn}>Learn More</Link></button>
                 </div>
             </div>
         </>
