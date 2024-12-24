@@ -1,0 +1,91 @@
+/* Container Styling */
+.container {
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading Styles */
+.h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 20px 0 10px;
+    color: #555;
+}
+
+/* List Styling */
+.ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* List Item Styling */
+/* List Item Styling */
+.li {
+    display: flex;  /* Use Flexbox to arrange items */
+    justify-content: space-between;  /* Ensure space between gear name and rent date */
+    align-items: center; /* Align items vertically */
+    padding: 10px 15px;
+    margin: 40px 0;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+}
+
+/* Left Side Styling (Gear Name) */
+.li .gear-name {
+    flex: 1; /* This allows the name to take up as much space as possible on the left */
+    text-align: left; /* Align the name to the left */
+}
+
+/* Right Side Styling (Rent Date) */
+.li .rent-date {
+    text-align: right; /* Align the rent date to the right */
+    font-style: italic; /* Style the rent date */
+    color: #777;
+}
+
+/* Styling for Name and Rent Date */
+.li b {
+    margin-right: 10px;
+    color: #333;
+}
+
+.li i {
+    color: #777;
+}
+
+
+/* Restricted Access Styling */
+.restricted {
+    color: red;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .h1 {
+        font-size: 1.5rem;
+    }
+
+    .h2 {
+        font-size: 1.25rem;
+    }
+
+    .li {
+        font-size: 0.9rem;
+    }
+}

@@ -86,12 +86,12 @@ function Register() {
                 <h1 className={styles.h1}>Register</h1>
                 <div className={styles.container}>
                     <form onSubmit={handleRegister}> 
-                        <label htmlFor="username" className={styles.label}><b>Username:</b></label>
+                        <label htmlFor="username" className={styles.label}><b>Email:</b></label>
                         <input 
                             type="text" 
                             id="username" 
                             className={styles.input} 
-                            placeholder="Username" 
+                            placeholder="Email" 
                             value={username} 
                             onChange={(e) => setUsername(e.target.value)} 
                         />

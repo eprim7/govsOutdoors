@@ -66,12 +66,12 @@ function Login() {
                 <h1 className={styles.h1}>Login</h1>
                 <div className={styles.container}>
                     <form onSubmit={handleLogin}>
-                        <label htmlFor="username" className={styles.label}><b>Username:</b></label>
+                        <label htmlFor="username" className={styles.label}><b>Email:</b></label>
                         <input 
                             type="text" 
                             id="username" 
                             className={styles.input} 
-                            placeholder="Username"
+                            placeholder="Email"
                             value={username} 
                             onChange={(e) => setUsername(e.target.value)}
                         />

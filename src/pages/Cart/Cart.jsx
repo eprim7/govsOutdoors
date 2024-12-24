@@ -20,7 +20,7 @@ function Cart() {
       const cartData = {
         gear_id: item.id,
         username: storedUsername,
-        rent_date: new Date().toISOString().slice(0, 10), // Current date in YYYY-MM-DD format
+        rent_date: new Date().toISOString().slice(0, 10),
         price: item.price * item.quantity,
       };
 
