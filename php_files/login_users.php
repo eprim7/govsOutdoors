@@ -36,6 +36,6 @@ try {
         echo json_encode(['status' => 'error', 'message' => 'Invalid username or password']);
     }
 } catch (PDOException $e) {
-    echo json_encode(['status' => 'error', 'message' => $e->getMessage()]);
+    echo json_encode(['status' => 'error', 'message' => 'An unexpected error occurred']);
 }
 ?>
