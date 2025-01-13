@@ -15,6 +15,40 @@ const CheckoutButton = ({ cartItems, submitCartToBackend}) => {
   const { clearCart } = useContext(CartContext);
 
 
+  const getCartNames = () => {
+    return cartItems.map((item) => item.name);
+  };
+
+  const sendEmail = async () => {
+    const userEmail = localStorage.getItem("userEmail");
+    const items = getCartNames();
+    const payload = { userEmail, items };
+  
+    try {
+      const response = await fetch("http://localhost/email.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+  
+      // Check if the response is JSON
+      const contentType = response.headers.get("content-type");
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error("Error response:", errorText); // Log raw response
+        throw new Error("Failed to send email");
+      } else if (contentType && contentType.includes("application/json")) {
+        const data = await response.json();
+        console.log("Email sent successfully:", data);
+      } else {
+        throw new Error("Unexpected response format");
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
+    }
+  };
+  
+
   // Function to calculate the total cart amount
   useEffect(() => {
     const calculateCartTotal = () => {
@@ -33,6 +67,8 @@ const CheckoutButton = ({ cartItems, submitCartToBackend}) => {
     
       return Math.round(total * 100); // Convert to cents
     };
+
+    
     
   
     const cartTotal = calculateCartTotal();
@@ -45,7 +81,7 @@ const CheckoutButton = ({ cartItems, submitCartToBackend}) => {
       return;
     }
   
-    fetch('http://localhost/create-payment-intent.php', {  // Adjust the URL to point to your PHP backend
+    fetch('http://localhost/create-payment-intent.php', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ amount: cartTotal }), // Send total amount (in cents)
@@ -61,13 +97,13 @@ const CheckoutButton = ({ cartItems, submitCartToBackend}) => {
         console.error('Error fetching client secret:', error);
         setError('Failed to initialize payment.');
       });
-  }, [cartItems]); // Use cartItems as the dependency
+  }, [cartItems]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     if (!stripe || !elements) {
-      return; // Stripe.js has not loaded yet
+      return;
     }
 
     const cardNumberElement = elements.getElement(CardNumberElement);
@@ -86,9 +122,11 @@ const CheckoutButton = ({ cartItems, submitCartToBackend}) => {
         setSuccess(true);
         setError(null);
         console.log('Payment successful!', result.paymentIntent);
+        sendEmail();
+
         submitCartToBackend();
         navigate('/successful');
-    clearCart();
+        clearCart();
       }
     }
   };

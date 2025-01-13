@@ -24,14 +24,16 @@ try {
 
     $username = $data['username'];
     $password = $data['password'];
+    $phoneNumber = $data['phoneNumber'];
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
     // Prepare the SQL statement to prevent SQL injection
-    $stmt = $db->prepare("INSERT INTO users2 (username, password) VALUES (:username, :password)");
+    $stmt = $db->prepare("INSERT INTO users2 (username, password, phoneNumber) VALUES (:username, :password, :phoneNumber)");
 
     // Bind parameters
     $stmt->bindParam(':username', $username);
     $stmt->bindParam(':password', $hashedPassword);
+    $stmt->bindParam(':phoneNumber', $phoneNumber);
 
     // Execute the statement
     if ($stmt->execute()) {

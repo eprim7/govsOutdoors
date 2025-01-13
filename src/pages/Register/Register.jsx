@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 function Register() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
     const [isValid, setIsValid] = useState(true); // Default to true
@@ -14,14 +15,20 @@ function Register() {
     const handleRegister = async (e) => {
         e.preventDefault(); // Prevent default form submission
 
-        const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).{8,}$/;
-        const isPasswordValid = regex.test(password);
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).{8,}$/;
+        const phoneNumberRegex = /^(\(\d{3}\)|\d{3})[-.\s]?\d{3}[-.\s]?\d{4}$/;
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        const isPasswordValid = passwordRegex.test(password);
+        const isPhoneNumberValid = phoneNumberRegex.test(phoneNumber);
+        const isEmailValid = emailRegex.test(username);
         setIsValid(isPasswordValid); // Check password validity
 
         const resetForm = () => {
             setUsername(''); // clears username
             setPassword(''); // clears password 
             setConfirmPassword(''); // clears confirm password 
+            setPhoneNumber('');
             setError(''); // Clear error message
         }
 
@@ -38,6 +45,14 @@ function Register() {
             setError("Passwords do not match");
             return;
         }
+        if(!isPhoneNumberValid){
+            setError("This is not a valid phone number. Please try again");
+            return;
+        }
+        if(!isEmailValid){
+            setError("This is not a valid email address. Please try again");
+            return;
+        }
 
         // CONNECT TO THE BACKEND
         try {
@@ -49,6 +64,7 @@ function Register() {
                 body: JSON.stringify({
                     username: username,
                     password: password,
+                    phoneNumber: phoneNumber,
                 }),
             });
 
@@ -116,6 +132,15 @@ function Register() {
                             onChange={(e) => setConfirmPassword(e.target.value)} 
                         />
                         <button type="button" onClick={() => togglePasswordVisibility("confirm-password")} className={styles.display}>See Password</button>
+                        <label htmlFor="phoneNumber" className={styles.label}><b>Phone Number:</b></label>
+                        <input 
+                            type="tel" 
+                            id="phoneNumber" 
+                            className={styles.input} 
+                            placeholder="Phone Number" 
+                            value={phoneNumber} 
+                            onChange={(e) => setPhoneNumber(e.target.value)} 
+                        />
                         <button type="submit" className={styles.button}>Register</button>
                         {error && <p className={styles.error}>{error}</p>} {/* Show error message if any */}
                     </form>
