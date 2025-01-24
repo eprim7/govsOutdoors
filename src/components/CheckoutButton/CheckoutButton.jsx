@@ -22,14 +22,20 @@ const CheckoutButton = ({ cartItems, submitCartToBackend}) => {
   const sendEmail = async () => {
     const userEmail = localStorage.getItem("userEmail");
     const items = getCartNames();
-    const payload = { userEmail, items };
   
     try {
       const response = await fetch("http://localhost/email.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+        body: JSON.stringify(userEmail, items),
+      }).then((response) => {
+        if (!response.ok) {
+            throw new Error("Network response was not ok");
+        }
+        return response.json();
+    })
+    .then((data) => console.log("Success:", data))
+    .catch((error) => console.error("Error sending email:", error));
   
       // Check if the response is JSON
       const contentType = response.headers.get("content-type");

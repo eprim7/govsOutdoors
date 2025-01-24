@@ -6,7 +6,6 @@ import { Elements } from '@stripe/react-stripe-js';
 
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
-// import Schedule from './pages/Schedule/Schedule';
 import Trips from './pages/Trips/Trips';
 import Login from './pages/Login/Login';
 import Gear from './pages/Gear/Gear';

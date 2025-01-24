@@ -54,7 +54,6 @@ function Register() {
             return;
         }
 
-        // CONNECT TO THE BACKEND
         try {
             const response = await fetch("http://localhost/register_users.php", {
                 method: "POST",
