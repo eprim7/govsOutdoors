@@ -15,7 +15,7 @@ Responsive Design: CSS modules and media queries ensure compatibility with vario
 # Installation
 Clone the repository:
 
-git clone https://github.com/yourusername/govs-outdoors.git
+git clone https://github.com/eprim7/govsOutdoors.git
 cd govs-outdoors
 
 Install dependencies:
